@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Mesaj</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #e63946;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .story, .quote, #letter, #finalMessage, #hearts {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .story.visible, .quote.visible, #letter.visible, #finalMessage.visible, #hearts.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .story {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #457b9d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: #1d3557;
+            transform: scale(1.05);
+        }
+
+        #hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif') center/cover no-repeat;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Merhaba, Bu mesaj sana özel!</h1>
+
+    <div class="story visible" id="story1">
+        <h2>Küçük Mucizelerin Gücü</h2>
+        <p>Bir zamanlar, deniz kenarında küçük bir köyde yaşayan bir adam vardı. Adam, yıllardır hastalıkla boğuşan annesi için her gün dua ederdi. Bir gün, hiç beklemediği bir anda, köylerine gelen bir doktor, annesinin hastalığını iyileştirdi. Bu olay, köyde bir mucize olarak kabul edildi. Adam, bu mucizenin gerçekleşmesine inanmasa da, küçük bir umutla dua etmeye devam etmişti. Sonunda, o küçük umudun büyük bir mucizeye dönüştüğünü gördü.</p>
+        <p>"İyi Fındık, sen de hayatında hiç küçük bir umudun büyük bir mucizeye dönüştüğünü görmek istedin mi?"</p>
+        <button onclick="nextStep(2)">Devam</button>
+    </div>
+
+    <div class="quote" id="quote1">
+        <p>Bazen hayatta küçük bir umut, büyük mucizelerin başlangıcı olabilir. Senin inancın, belki de hayatın hiç ummadığın anlarında gerçekleşecek mucizelere kapı açacak.</p>
+    </div>
+
+    <div class="story" id="story2">
+        <h2>Anıların Sonsuz Yankısı</h2>
+        <p>Bir çift, her yıl aynı ağacın altında piknik yaparak anılarını tazeliyordu. Yıllar geçtikçe, bu ağacın altında paylaştıkları anılar onların en değerli hazinesi haline geldi. Yağmurlu günlerde, güneşli sabahlarda, her mevsimde orada buluştular. O ağacın gölgesinde geçirilen her an, onların birlikte kurduğu bir başka unutulmaz anıya dönüştü. Yıllar sonra bile, o anılar, kalplerinde sıcak bir gülümsemeyle hatırlandı.</p>
+        <p>"Bir gün, sen de İyi Fındık gibi biriyle birlikte unutulmaz anılar biriktirmek istedin mi?"</p>
+        <button onclick="nextStep(3)">Devam</button>
+    </div>
+
+    <div class="quote" id="quote2">
+        <p>Unutulmaz anılar, zamanın ötesine geçer ve kalbimizde hep sıcak bir yer bulur. Birlikte biriktirilen her anı, gelecekte dönüp baktığında sana gülümseme getirecek birer hazine olabilir.</p>
+    </div>
+
+    <div class="story" id="story3">
+        <h2>Yan Yana Durmanın Gücü</h2>
+        <p>Bir kasabada yaşayan iki arkadaş, çocukluklarından beri her anı birlikte yaşamışlardı. İyi günlerde birbirlerinin yanında sevinçle dururken, kötü günlerde omuz omuza verip zorluklara karşı birlikte savaştılar. Aralarındaki bağ, zamanla daha da güçlendi ve ne olursa olsun, her zaman birlikte olmanın değerini anladılar. Onlar için, en zor zamanlarda bile yan yana olmak, hayatın en büyük hediyesiydi.</p>
+        <p>"Hayatında, İyi Fındık gibi biriyle her durumda yanında olmayı ve birlikte güçlenmeyi hiç istedin mi?"</p>
+        <button onclick="nextStep(4)">Devam</button>
+    </div>
+
+    <div class="quote" id="quote3">
+        <p>Hayatın zorlukları karşısında, yanında biri olduğunda her şey daha kolay gelir. Yan yana durmanın verdiği güç, her fırtınayı dindirir ve kalpleri daha da yakınlaştırır.</p>
+    </div>
+
+    <div class="story" id="story4">
+        <h2>Hayallerin Peşinden Gidenler</h2>
+        <p>Bir çift, birlikte kurdukları bir hayalin peşinden gitmeye karar verdiler. Küçük bir kasabada, eski bir evi restore edip orada mutlu bir yaşam sürme hayaliydi bu. Yıllar süren çaba ve emekten sonra, hayalleri gerçeğe dönüştü. O eski ev, şimdi onların sıcak yuvası, birlikte kurdukları hayatın somut bir simgesiydi. Hayal ettikleri her şey, birbirlerine olan inançları ve sevgileri sayesinde gerçekleşmişti.</p>
+        <p>"Sen de bir gün İyi Fındık gibi hayallerini biriyle birlikte gerçeğe dönüştürmek istedin mi?"</p>
+        <button onclick="nextStep(5)">Devam</button>
+    </div>
+
+    <div class="quote" id="quote4">
+        <p>Hayaller, onlara inananlarla gerçeğe dönüşür. Birlikte kurulan hayaller ise, en güçlü ve en anlamlı olanlardır; çünkü onların arkasında sevgi ve inanç vardır.</p>
+    </div>
+
+    <div class="story" id="story5">
+        <h2>Tesadüflerin Fısıldadığı Hikayeler</h2>
+        <p>Bir gün, hayatın farklı yollarında yürüyen iki insan, tesadüfen yollarının kesiştiği bir kavşakta buluştular. Her biri kendi hikayelerini taşıyor, umutlar ve anılarla doluydu. Birlikte geçirdikleri zaman içinde, küçük mucizeler yarattılar, unutulmaz anılar biriktirdiler ve her zorlukta birbirlerinin yanında oldular. Sonunda, birlikte kurdukları hayalleri gerçeğe dönüştürmeyi başardılar. Onlar için hayat, tesadüflerle başlayan ve birlikte oluşturulan bir masala dönüşmüştü.</p>
+        <p>"Hayatın sana hiç beklemediğin bir anda birini getirip, onunla bir masal yazmayı istedin mi, İyi Fındık?"</p>
+        <button onclick="showLetter()">Mektubu Göster</button>
+    </div>
+
+    <div id="letter" class="hidden">
+        <h2>Mektup</h2>
+        <p>Hayat, aslında bir dizi ihtimalin bize sunduğu fırsatlar ve sürprizlerle dolu bir yolculuk. Kimi zaman bu ihtimaller ö
